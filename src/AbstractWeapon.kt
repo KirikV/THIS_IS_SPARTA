@@ -9,7 +9,6 @@ abstract class AbstractWeapon(
 
     fun createBullet(bullet: Ammo): Ammo {
         horn.push(bullet)
-        println("Создан патрон ${bullet.bulletName}") // Ком для проверки !!!!!! УДАЛИТЬ В КОНЦЕ
         return bullet
     }
 
@@ -26,7 +25,7 @@ abstract class AbstractWeapon(
                     }
                 }
             }
-            println("Оружие перезаряжено, магазин полон") // Ком для проверки !!!!!! УДАЛИТЬ В КОНЦЕ
+            println("Оружие перезаряжено, магазин полон")
         }
     }
 
@@ -43,6 +42,5 @@ abstract class AbstractWeapon(
         }
         return bullets
     }
-
 }
 

@@ -4,9 +4,9 @@ enum class Ammo(
     val chance: Int,
     val kcrit: Int
 ) {
-    BR("Бронебойный", 80, 40, 2),
-    SH("Шрапнель", 30, 20, 2),
-    FU("Фугас", 50, 30, 4);
+    BR("Бронебойными", 50, 90, 2),
+    SH("Шрапнелью", 30, 80, 2),
+    FU("Фугасом", 30, 60, 3);
 
     fun currentDamage(): Int {
         return if (Int.getChance(this.chance)) {

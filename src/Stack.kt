@@ -1,6 +1,6 @@
     open class Stack<T> {
         private val list = mutableListOf<T>()
-
+        val size: Int get() = list.size
         fun push(item: T) {
             list.add(item)
         }
@@ -13,5 +13,6 @@
 
         fun isEmpty(): Boolean =
             list.isEmpty()
+
     }
 
