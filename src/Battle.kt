@@ -140,24 +140,22 @@ class Battle(val myTeam: Team, val teamOpponent: Team) {
     }
 
     private fun showStatus() {
-        println("\n" + "=".repeat(30))
+        println("\n" + "=".repeat(100))
         println("📊 ТЕКУЩИЙ СТАТУС БИТВЫ")
 
         println("\n🟢 ТВОЯ КОМАНДА [${myTeam.nameTeam}]:")
-        if (myTeam.team.isEmpty()) println("   Пусто... Все сосут.")
-        else myTeam.team.forEach { warrior ->
+        myTeam.team.forEach { warrior ->
             val w = warrior as AbstractWarrior
             println("   - $w | Здоровье: ${w.currentHP}/${w.maxHP} | Оружие: ${w.weapon.weaponName} " +
                     "Патронов в магазине: ${w.weapon.horn.size}")
         }
 
         println("\n🔴 ВРАГИ [${teamOpponent.nameOpponentTeam}]:")
-        if (teamOpponent.teamOpponent.isEmpty()) println("   Все уничтожены!")
-        else teamOpponent.teamOpponent.forEach { warrior ->
+        teamOpponent.teamOpponent.forEach { warrior ->
             val w = warrior as AbstractWarrior
             println("   - $w | Здоровье: ${w.currentHP}/${w.maxHP} | Оружие: ${w.weapon.weaponName} " +
                     "Патронов в магазине: ${w.weapon.horn.size}")
         }
-        println("=".repeat(30))
+        println("=".repeat(50))
     }
 }
