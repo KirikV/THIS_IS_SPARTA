@@ -15,14 +15,12 @@ abstract class AbstractWeapon(
     fun reloading() {
         if (!hasBullet) {
             println("Перезарядка")
-            if (fireType is FireType.OneShot) {
-                repeat(maxSizeHorn) { createBullet(Ammo.entries.random()) }
-            } else if (fireType is FireType.BurstFire) {
-                repeat(maxSizeHorn) {
-                    val randomBullet = createBullet(Ammo.entries.random())
-                    if (randomBullet == Ammo.SH) {
-                        return@repeat
-                    }
+            var validBullet = false
+            while (!validBullet){
+                val randomBullet = Ammo.entries.random()
+            if (fireType is FireType.OneShot || (fireType is FireType.BurstFire && randomBullet != Ammo.SH)) {
+                createBullet(randomBullet)
+                validBullet = true
                 }
             }
             println("Оружие перезаряжено, магазин полон")
